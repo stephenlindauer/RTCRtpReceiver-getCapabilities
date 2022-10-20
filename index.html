@@ -1,0 +1,28 @@
+<html>
+
+<head>
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    div {
+        margin-bottom: 2px;
+    }
+</style>
+</head>
+<body>
+    <h1>RTCRtpReceiver.getCapabilities("video")</h1>
+    <script>
+        resp = RTCRtpReceiver.getCapabilities("video");
+        document.write('<h2>Codecs</h2>');
+        resp.codecs.forEach(codec => {
+            document.write(`<div>${JSON.stringify(codec)}</div>`);
+        });
+        document.write('<h2>Header Extensions</h2>');
+        resp.headerExtensions.forEach(ext => {
+            document.write(`<div>${JSON.stringify(ext)}</div>`);
+        });
+
+    </script>
+</body>
+</html>
